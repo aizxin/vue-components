@@ -4,12 +4,12 @@ var webpack = require('webpack')
 module.exports = {
   // 组件打包
   entry: {
-    'vue-city': path.join(__dirname, 'src/components/vue-city.vue')
+    'vue-cate': path.join(__dirname, 'src/components/vue-cate.vue')
   },
   output: {
     path: path.join(__dirname, 'dist'),
     publicPath: '/',
-    library: 'vueCity',
+    library: 'vueCate',
     libraryTarget: 'umd',
     filename: "[name].js"
   },

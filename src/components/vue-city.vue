@@ -88,6 +88,8 @@
 					}
 					return item[this.valueType] == this.province;
 				}.bind(this));
+				this.$set('cityname','');
+				this.$set('districtname','');
 				if(seletedItem.length){
 					this.cities = seletedItem[0]['children'];
 					this.city = this.cities[0][this.valueType] == this.oldCity ? this.cities[0][this.valueType] : this.oldCity;
@@ -105,6 +107,7 @@
 					}
 					return item[this.valueType] == this.city;
 				}.bind(this));
+				this.$set('districtname','');
 				if(seletedItem.length){
 					this.districts = seletedItem[0]['children'];
 					this.district = this.districts[0][this.valueType] == this.oldDistrict ? this.districts[0][this.valueType] : this.oldDistrict;

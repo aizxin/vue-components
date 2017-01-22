@@ -94,12 +94,19 @@
 				let seletedItem = this.rc1ids.filter(function(item){
 					return item[this.valueType] == this.rc1id;
 				}.bind(this));
-				let child = seletedItem[0]['child'];
-				if(child.length){
-					this.rc2ids = child;
-					this.$set('rc2idshow',true);
-					this.$set('rc3idshow',false);
-					this.rc2id = this.rc2ids[0][this.valueType] == this.oldRc2id ? this.rc2ids[0][this.valueType] : this.oldRc2id;
+				if(seletedItem.length){
+					let child = seletedItem[0]['child'];
+					if(child.length){
+						this.rc2ids = child;
+						this.$set('rc2idshow',true);
+						this.$set('rc3idshow',false);
+						this.rc2id = this.rc2ids[0][this.valueType] == this.oldRc2id ? this.rc2ids[0][this.valueType] : this.oldRc2id;
+					}else{
+						this.$set('rc2idshow',false);
+						this.$set('rc3idshow',false);
+						this.rc2id = '';
+						this.rc2ids = [];
+					}
 				}else{
 					this.$set('rc2idshow',false);
 					this.$set('rc3idshow',false);
